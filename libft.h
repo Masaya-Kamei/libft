@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 15:29:16 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/07 14:46:59 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/07 15:43:06 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 #endif
