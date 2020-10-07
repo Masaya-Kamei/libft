@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 12:19:01 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/07 17:41:01 by mkamei           ###   ########.fr       */
+/*   Created: 2020/10/07 18:51:49 by mkamei            #+#    #+#             */
+/*   Updated: 2020/10/07 18:53:11 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_isprint(int c)
 {
-	int i;
-
-	i = 0;
-	while (1)
-	{
-		if (s[i] == c)
-			return (char *)(s + i);
-		if (s[i] == '\0')
-			break ;
-		i++;
-	}
-	return (NULL);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

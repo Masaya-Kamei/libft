@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 12:19:01 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/07 17:41:01 by mkamei           ###   ########.fr       */
+/*   Created: 2020/10/07 17:38:26 by mkamei            #+#    #+#             */
+/*   Updated: 2020/10/07 17:59:15 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int			ft_atoi(const char *str)
 {
 	int i;
+	int nbr;
+	int minus;
 
 	i = 0;
-	while (1)
+	minus = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
+			|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n')
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (s[i] == c)
-			return (char *)(s + i);
-		if (s[i] == '\0')
-			break ;
+		if (str[i] == '-')
+			minus = 1;
 		i++;
 	}
-	return (NULL);
+	nbr = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+		nbr = (nbr * 10) + str[i++] - '0';
+	if (minus == 0)
+		return (nbr);
+	else
+		return (-1 * nbr);
 }
