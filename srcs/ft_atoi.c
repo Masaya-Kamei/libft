@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 17:38:26 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/07 17:59:15 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/08 15:22:35 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int			ft_atoi(const char *str)
 {
-	int i;
-	int nbr;
-	int minus;
+	int		i;
+	int		nbr;
+	int		minus;
 
 	i = 0;
 	minus = 0;

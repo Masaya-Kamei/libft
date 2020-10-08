@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/05 16:51:12 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/07 11:35:57 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/08 12:37:55 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	int i;
 
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	while (i < (int)n)
 	{
