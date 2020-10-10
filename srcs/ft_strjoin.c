@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 17:38:26 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/10 14:55:12 by mkamei           ###   ########.fr       */
+/*   Created: 2020/10/08 17:08:44 by mkamei            #+#    #+#             */
+/*   Updated: 2020/10/08 17:29:42 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	int		nbr;
-	int		minus;
+	size_t	pre_len;
+	size_t	suf_len;
+	char	*join;
 
+	pre_len = ft_strlen(s1);
+	suf_len = ft_strlen(s2);
+	join = (char *)malloc((pre_len + suf_len) * sizeof(char) + 1);
+	if (join == NULL)
+		return (NULL);
 	i = 0;
-	minus = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (i < (int)pre_len)
 	{
-		if (str[i] == '-')
-			minus = 1;
+		join[i] = s1[i];
 		i++;
 	}
-	nbr = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		nbr = (nbr * 10) + str[i++] - '0';
-	if (minus == 0)
-		return (nbr);
-	else
-		return (-1 * nbr);
+	while (i < (int)pre_len + (int)suf_len)
+	{
+		join[i] = s2[i - (int)pre_len];
+		i++;
+	}
+	join[i] = '\0';
+	return (join);
 }

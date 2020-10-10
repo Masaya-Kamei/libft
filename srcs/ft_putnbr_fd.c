@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 17:38:26 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/10 14:55:12 by mkamei           ###   ########.fr       */
+/*   Created: 2020/10/10 11:56:26 by mkamei            #+#    #+#             */
+/*   Updated: 2020/10/10 12:03:02 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+static void	print_nbr(unsigned int nbr, int fd)
 {
-	int		i;
-	int		nbr;
-	int		minus;
+	if (nbr >= 10)
+		print_nbr(nbr / 10, fd);
+	ft_putchar_fd(nbr % 10 + '0', fd);
+}
 
-	i = 0;
-	minus = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+void		ft_putnbr_fd(int n, int fd)
+{
+	unsigned int un;
+
+	if (n < 0)
 	{
-		if (str[i] == '-')
-			minus = 1;
-		i++;
+		ft_putchar_fd('-', fd);
+		un = -1 * n;
+		print_nbr(un, fd);
 	}
-	nbr = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		nbr = (nbr * 10) + str[i++] - '0';
-	if (minus == 0)
-		return (nbr);
 	else
-		return (-1 * nbr);
+		print_nbr(n, fd);
 }

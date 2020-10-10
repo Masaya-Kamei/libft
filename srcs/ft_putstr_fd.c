@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/06 11:10:34 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/08 16:51:56 by mkamei           ###   ########.fr       */
+/*   Created: 2020/10/10 11:19:50 by mkamei            #+#    #+#             */
+/*   Updated: 2020/10/10 11:24:59 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *buf1, const void *buf2, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (i < (int)n)
-	{
-		if (((unsigned char *)buf1)[i] != ((unsigned char *)buf2)[i])
-			return (((unsigned char *)buf1)[i] - ((unsigned char *)buf2)[i]);
-		i++;
-	}
-	return (0);
+	write(fd, s, ft_strlen(s));
 }

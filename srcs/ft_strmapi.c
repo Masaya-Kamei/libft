@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 17:38:26 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/10 14:55:12 by mkamei           ###   ########.fr       */
+/*   Created: 2020/10/09 16:07:29 by mkamei            #+#    #+#             */
+/*   Updated: 2020/10/10 13:47:04 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
-	int		nbr;
-	int		minus;
+	char	*str;
 
 	i = 0;
-	minus = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
-			|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n')
+	while (s[i] != '\0')
 		i++;
-	if (str[i] == '+' || str[i] == '-')
+	str = (char *)malloc(i * sizeof(char) + 1);
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
 	{
-		if (str[i] == '-')
-			minus = 1;
+		str[i] = f(i, s[i]);
 		i++;
 	}
-	nbr = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		nbr = (nbr * 10) + str[i++] - '0';
-	if (minus == 0)
-		return (nbr);
-	else
-		return (-1 * nbr);
+	str[i] = '\0';
+	return (str);
 }
