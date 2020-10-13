@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 18:14:01 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/08 19:13:35 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/13 17:45:48 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	get_str_count(char const *s, char c)
 	return (count);
 }
 
-static int	get_str_len(char const *str, char c)
+static int	split_len(char const *str, char c)
 {
 	int i;
 
@@ -41,6 +41,17 @@ static int	get_str_len(char const *str, char c)
 	while (str[i] != c && str[i] != '\0')
 		i++;
 	return (i);
+}
+
+static void	*release(char **strs, int strs_index)
+{
+	int i;
+
+	i = 0;
+	while (i < strs_index)
+		free(strs[i++]);
+	free(strs);
+	return (NULL);
 }
 
 char		**ft_split(char const *s, char c)
@@ -58,11 +69,10 @@ char		**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			len = get_str_len(&s[i], c);
+			len = split_len(&s[i], c);
 			if (!(strs[strs_index] = (char *)malloc(len * sizeof(char) + 1)))
-				return (NULL);
-			ft_strlcpy(strs[strs_index], &s[i], len + 1);
-			strs_index++;
+				return (release(strs, strs_index));
+			ft_strlcpy(strs[strs_index++], &s[i], len + 1);
 			i += len;
 		}
 		else
