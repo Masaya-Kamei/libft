@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 17:08:44 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/08 17:29:42 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/14 13:09:10 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	pre_len = ft_strlen(s1);
 	suf_len = ft_strlen(s2);
-	join = (char *)malloc((pre_len + suf_len) * sizeof(char) + 1);
-	if (join == NULL)
+	if (!(join = (char *)malloc((pre_len + suf_len) * sizeof(char) + 1)))
 		return (NULL);
 	i = 0;
 	while (i < (int)pre_len)
