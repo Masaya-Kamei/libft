@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 18:14:01 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/18 14:15:42 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/24 13:43:29 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,6 @@ char		**ft_split(char const *s, char c)
 {
 	char	**strs;
 
-	if (s == NULL)
-		return (NULL);
 	if (!(strs = (char **)malloc((get_str_count(s, c) + 1) * sizeof(char *))))
 		return (NULL);
 	if (!(strs = split_str(s, c, strs)))

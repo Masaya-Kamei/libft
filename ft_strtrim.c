@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 17:36:45 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/23 18:06:33 by mkamei           ###   ########.fr       */
+/*   Updated: 2020/10/24 13:41:50 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*str;
 
-	if (s1 == NULL || set == NULL)
-		return (NULL);
 	start = get_start_index(s1, set);
 	if (start == (int)ft_strlen(s1))
 		return (ft_strdup(""));
