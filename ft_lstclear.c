@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 12:26:00 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/18 13:17:14 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/05/27 18:28:46 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *next;
+	t_list	*next;
 
 	if (lst == NULL || del == NULL)
 		return ;

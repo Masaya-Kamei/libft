@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 11:56:26 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/18 13:43:08 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/05/27 18:32:39 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ static void	print_nbr(unsigned int nbr, int fd)
 	ft_putchar_fd(nbr % 10 + '0', fd);
 }
 
-void		ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int un;
+	unsigned int	un;
 
 	if (n < 0)
 	{

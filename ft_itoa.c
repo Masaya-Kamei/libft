@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 15:30:11 by mkamei            #+#    #+#             */
-/*   Updated: 2020/10/18 13:05:14 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/05/27 18:28:01 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	nbr_to_str(char *str, int i, unsigned int nbr)
 	}
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				n_len;
 	unsigned int	un;
@@ -53,7 +53,8 @@ char		*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	n_len = get_int_len(n);
-	if (!(str = (char *)malloc((n_len + 1) * sizeof(char))))
+	str = (char *)malloc((n_len + 1) * sizeof(char));
+	if (str == NULL)
 		return (NULL);
 	if (n < 0)
 	{
