@@ -6,18 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 11:56:26 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/04 18:00:07 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/05 15:26:12 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	rec_write_one_digit(unsigned int nbr, int fd)
-{
-	if (nbr >= 10)
-		rec_write_one_digit(nbr / 10, fd);
-	ft_putchar_fd(nbr % 10 + '0', fd);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -30,5 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		un = n;
-	rec_write_one_digit(un, fd);
+	if (un >= 10)
+		ft_putnbr_fd(un / 10, fd);
+	ft_putchar_fd(un % 10 + '0', fd);
 }
