@@ -30,5 +30,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: alelievr/libft-unit-test
-      - run: ls
+          path: libft-unit-test
+      - run: ls; ls ../
       # - run: sed -i "" "s/libft/..\/libft/" libft-unit-test/Makefile; cat libft-unit-test/Makefile
