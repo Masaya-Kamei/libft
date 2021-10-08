@@ -31,5 +31,5 @@ jobs:
         with:
           repository: alelievr/libft-unit-test
           path: libft-unit-test
-      - run: ls; ls ../
+      - run: ls && ls ../ && pwd
       # - run: sed -i "" "s/libft/..\/libft/" libft-unit-test/Makefile; cat libft-unit-test/Makefile
