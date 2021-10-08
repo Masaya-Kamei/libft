@@ -1,6 +1,6 @@
 *.o
 *.txt
 libft.a
-*main*
+*main.c
 a.out
 objs
