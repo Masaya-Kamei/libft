@@ -6,7 +6,7 @@
 #    By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 18:28:14 by mkamei            #+#    #+#              #
-#    Updated: 2021/10/13 17:14:58 by mkamei           ###   ########.fr        #
+#    Updated: 2021/10/13 18:37:17 by mkamei           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,28 +25,25 @@ CC		:=	gcc
 CFLAGS	:=	-Wall -Wextra -Werror
 RM		:=	rm -rf
 
-LIBFTDIR		:= ../
-LIBFTNAME 		:= ft
-LIBFTINCLUDEDIR := ../
+LIBFTDIR		:=	../
+LIBFTTARGET		:=	all
+LIBFT			:=	$(LIBFTDIR)/libft.a
 
-LIBUNITDIR		:= framework
-LIBUNITNAME 	:= unit
-LIBUNITINCLUDEDIR:= framework
+LIBUNITDIR		:=	./framework
+LIBUNITTARGET	:= all
+LIBUNIT			:= $(LIBUNITDIR)/libunit.a
 
-LIBINCLUDE	:= -I${LIBFTINCLUDEDIR} -I${LIBUNITINCLUDEDIR}
-LIBDIR		:= -L${LIBFTDIR} -L${LIBUNITDIR}
-LIBLINK		:= -l${LIBFTNAME} -l${LIBUNITNAME}
+LIBINCLUDE	:=	-I../ -I./framework/includes
+LIBDIR		:=	-L${LIBFTDIR} -L${LIBUNITDIR}
+LIBLINK		:=	-lft -lunit
 ifeq ($(shell uname),Linux)
-	LIBLINK	+= -lbsd
+	LIBLINK	+=	-lbsd
 endif
-LIB			:= $(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
-
-LIBFTTARGET	:= all
-LIBFT		:= $(LIBFTDIR)/libft.a
+LIB			:=	$(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
 
 all		:	$(NAME)
 
-$(NAME)	:	$(LIBFT) $(OBJS)
+$(NAME)	:	$(LIBFT) $(LIBUNIT) $(OBJS)
 			$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIB) -o $@
 
 $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c
@@ -56,16 +53,21 @@ $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c
 $(LIBFT):
 			make $(LIBFTTARGET) -C $(LIBFTDIR)
 
+$(LIBUNIT):
+			make $(LIBUNITTARGET) -C $(LIBUNITDIR)
+
 test	:	$(NAME)
 			@./$(NAME) || :
 
 clean	:
 			$(RM) $(OBJS)
 			make clean -C $(LIBFTDIR)
+			make clean -C $(LIBUNITDIR)
 
 fclean	: 	clean
 			$(RM) $(NAME)
 			make fclean -C $(LIBFTDIR)
+			make fclean -C $(LIBUNITDIR)
 
 re		:	fclean all
 
