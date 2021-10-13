@@ -1,6 +1,6 @@
 *.o
 *.txt
 libft.a
-*main.c
 a.out
+unit_test
 objs
