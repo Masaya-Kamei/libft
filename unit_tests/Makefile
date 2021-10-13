@@ -6,7 +6,7 @@
 #    By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 18:28:14 by mkamei            #+#    #+#              #
-#    Updated: 2021/10/13 10:25:43 by mkamei           ###   ########.fr        #
+#    Updated: 2021/10/13 17:14:58 by mkamei           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,9 @@ LIBUNITINCLUDEDIR:= framework
 LIBINCLUDE	:= -I${LIBFTINCLUDEDIR} -I${LIBUNITINCLUDEDIR}
 LIBDIR		:= -L${LIBFTDIR} -L${LIBUNITDIR}
 LIBLINK		:= -l${LIBFTNAME} -l${LIBUNITNAME}
+ifeq ($(shell uname),Linux)
+	LIBLINK	+= -lbsd
+endif
 LIB			:= $(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
 
 LIBFTTARGET	:= all
