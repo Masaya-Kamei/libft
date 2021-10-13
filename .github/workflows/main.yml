@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -38,4 +38,5 @@ jobs:
           repository: alelievr/libft-unit-test
           path: libft-unit-test
       - name: run libft-unit-test
-        run: sed -i "s/libft//" libft-unit-test/Makefile && make -C ./libft-unit-test && ./libft-unit-test/run_test
+        run: sed -i "s/libft//" libft-unit-test/Makefile && make -C ./libft-unit-test
+             && ! ./libft-unit-test/run_test | grep -e "KO" -e "FAILED" -e "CRASH" -e "TIMEOUT" -e "MISSING"
