@@ -32,9 +32,10 @@ jobs:
         run: make -C ./unit_tests address && ./unit_tests/unit_test
       - name: make leak
         run: make -C ./unit_tests leak && ./unit_tests/unit_test
-      - name: run libft-unit-test
+      - name: Checkout libft-unit-test
         uses: actions/checkout@v2
         with:
           repository: alelievr/libft-unit-test
           path: libft-unit-test
+      - name: run libft-unit-test
         run: sed -i "s/libft//" libft-unit-test/Makefile && make -C ./libft-unit-test && ./libft-unit-test/run_test
