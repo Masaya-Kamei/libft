@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:32:07 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 19:21:53 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:57:34 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 // Dependency
 // ft_strtrim	:ft_strchr, ft_strdup, ft_strlen, ft_substr

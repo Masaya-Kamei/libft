@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:00:54 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 16:34:27 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:59 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static void	fill_z_when_even_index(unsigned int i, char *c)
 {

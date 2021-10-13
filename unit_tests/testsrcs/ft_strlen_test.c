@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:19:30 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 19:20:21 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:57:14 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	strlen_test_framework(char *s)
 {

@@ -6,13 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:08:28 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:21:43 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:42 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <unistd.h>
-#include <string.h>
 
 static int	putstr_fd_test_framework(char *str)
 {

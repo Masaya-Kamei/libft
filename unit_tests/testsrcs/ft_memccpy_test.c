@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:42:03 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 11:59:24 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:09 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	memccpy_test_framework(char *dst, char *src, int c, int n)
 {

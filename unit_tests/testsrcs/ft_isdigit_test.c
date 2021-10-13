@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 20:32:19 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:20:13 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:55:27 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <ctype.h>
 
 static int	isdigit_test_framework(char c)
 {

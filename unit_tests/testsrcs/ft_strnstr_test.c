@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:26:15 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:27:00 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:57:50 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	strnstr_test_framework(char *s1, char *s2, int len)
 {

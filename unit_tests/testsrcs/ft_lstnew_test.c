@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 21:18:03 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:20:53 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:03 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	lstnew_test_framework(char *content)
 {

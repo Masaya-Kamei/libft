@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 13:16:07 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 18:36:08 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:55:48 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 // Dependency
 // test 		:ft_lstnew

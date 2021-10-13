@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:13:15 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 16:45:20 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:57:11 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 // Dependency
 // ft_strlcpy	:ft_strlen

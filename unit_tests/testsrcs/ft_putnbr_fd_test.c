@@ -6,13 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 13:05:18 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:21:40 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:38 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <unistd.h>
-#include <string.h>
 
 static int	putnbr_fd_test_framework(int nbr)
 {

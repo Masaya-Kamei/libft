@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 17:20:09 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:18:21 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:57:21 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	strncmp_test_framework(char *s1, char *s2, int n)
 {

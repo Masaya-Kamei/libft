@@ -6,13 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 13:43:35 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 18:37:26 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:55:54 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
-#include <ctype.h>
 
 // Dependency
 // test 		:ft_lstnew, ft_lstlast, ft_lstclear

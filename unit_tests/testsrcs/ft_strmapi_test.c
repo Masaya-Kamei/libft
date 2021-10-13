@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static char	fill_z_when_even_index(unsigned int i, char c)
 {

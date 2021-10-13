@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 20:09:05 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 11:56:44 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:54:50 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 // Dependency
 // ft_bzero		:ft_memset

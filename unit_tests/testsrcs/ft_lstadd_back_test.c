@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 12:54:30 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:20:27 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:55:39 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 // Dependency
 // ft_lstadd_back	:ft_lstlast

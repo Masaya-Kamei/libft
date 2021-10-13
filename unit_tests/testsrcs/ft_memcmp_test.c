@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:04:18 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:21:14 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:17 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	memcmp_test_framework(char *buf1, char *buf2, int n)
 {

@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:48:50 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 18:10:22 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:54:45 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <stdlib.h>
 
 static int	atoi_test_framework(char *str)
 {

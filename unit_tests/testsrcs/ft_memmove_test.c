@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:32:31 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/12 16:32:36 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:25 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	memmove_test_framework(char *dst, char *src, int n)
 {

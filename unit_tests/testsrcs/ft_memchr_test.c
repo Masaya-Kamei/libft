@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 10:58:42 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:21:08 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:56:13 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <string.h>
 
 static int	memchr_test_framework(char *buf, int ch, int n)
 {

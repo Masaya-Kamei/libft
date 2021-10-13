@@ -6,12 +6,11 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 20:25:29 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/11 18:20:02 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:55:20 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "unit_test.h"
-#include <ctype.h>
 
 static int	isalpha_test_framework(char c)
 {
