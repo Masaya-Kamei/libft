@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 20:19:16 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/13 13:54:56 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 17:08:32 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 static int	isalnum_test_framework(char c)
 {
-	return (get_test_status(isalnum(c) == ft_isalnum(c)));
+	const int	ret = isalnum(c);
+	const int	ft_ret = ft_isalnum(c);
+
+	return (get_test_status((ret != 0 && ft_ret != 0) || (ret == 0 && ft_ret == 0)));
 }
 
 static int	isalnum_alpha_char_test()	{ return (isalnum_test_framework('z')); }

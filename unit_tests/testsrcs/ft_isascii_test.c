@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 20:30:10 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/13 13:55:24 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 17:09:24 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 static int	isascii_test_framework(int c)
 {
-	return (get_test_status(isascii(c) == ft_isascii(c)));
+	const int	ret = isascii(c);
+	const int	ft_ret = ft_isascii(c);
+
+	return (get_test_status((ret != 0 && ft_ret != 0) || (ret == 0 && ft_ret == 0)));
 }
 
 static int	isascii_alpha_test()		{ return (isascii_test_framework('a')); }

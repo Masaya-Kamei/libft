@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 20:34:03 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/13 13:55:31 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 17:09:59 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 static int	isprint_test_framework(char c)
 {
-	return (get_test_status(isprint(c) == ft_isprint(c)));
+	const int	ret = isprint(c);
+	const int	ft_ret = ft_isprint(c);
+
+	return (get_test_status((ret != 0 && ft_ret != 0) || (ret == 0 && ft_ret == 0)));
 }
 
 static int	isprint_space_test()		{ return (isprint_test_framework(' ')); }

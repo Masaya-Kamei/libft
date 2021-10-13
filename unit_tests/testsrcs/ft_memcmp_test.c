@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:04:18 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/13 13:56:17 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 17:10:36 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int	memcmp_test_framework(char *buf1, char *buf2, int n)
 {
-	const int	ret1 = memcmp(buf1, buf2, n);
-	const int	ret2 = ft_memcmp(buf1, buf2, n);
+	const int	ret = memcmp(buf1, buf2, n);
+	const int	ft_ret = ft_memcmp(buf1, buf2, n);
 
-	return (get_test_status((ret1 == ret2) || (ret1 > 0 && ret2 > 0) || (ret1 < 0 && ret2 < 0)));
+	return (get_test_status((ret == ft_ret) || (ret > 0 && ft_ret > 0) || (ret < 0 && ft_ret < 0)));
 }
 
 static int	memcmp_same_mem_test()		{ return (memcmp_test_framework("abcde", "abcde", 6)); }
