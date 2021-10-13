@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 18:40:28 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/13 13:55:09 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/10/13 14:03:37 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@
 # include "libunit.h"
 # include "libft.h"
 # include <ctype.h>
-# include <string.h>
+# if __linux__
+#  include <bsd/string.h>
+# else
+#  include <string.h>
+# endif
 
 // launcher
 int		ft_atoi_test_launcher(void);
