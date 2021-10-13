@@ -28,6 +28,8 @@ jobs:
         uses: alexandregv/norminette-action@v3
         with:
           flags: '*.c *.h'
+      - name: install libbsd-dev
+        run: apt install -y libbsd-dev
       - name: make address
         run: make -C ./unit_tests address && ./unit_tests/unit_test
       - name: make leak
