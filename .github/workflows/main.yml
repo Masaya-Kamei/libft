@@ -47,4 +47,5 @@ jobs:
         run: |
              sed -i "" "/^LIBFTDIR/s/libft/..\/libft/" libft-unit-test/Makefile
              make -C ./libft-unit-test re
-             ! ./libft-unit-test/run_test | grep -e "KO" -e "FAILED" -e "CRASH" -e "TIMEOUT" -e "MISSING"
+             ./libft-unit-test/run_test
+             ! cat ./libft-unit-test/result.log | grep -e "KO" -e "FAILED" -e "CRASH" -e "TIMEOUT" -e "MISSING"
