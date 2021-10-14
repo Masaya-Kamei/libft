@@ -30,6 +30,10 @@ jobs:
              python3 -m pip install norminette
       - name: Run Norminette
         run: norminette *.c *.h
+      - name: Install llvm clang
+        run: |
+             brew install llvm
+             export PATH="/usr/local/opt/llvm/bin:$PATH"
       - name: make address
         run: make -C ./unit_tests address && ./unit_tests/unit_test
       - name: make leak
