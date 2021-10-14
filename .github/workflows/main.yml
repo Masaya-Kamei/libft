@@ -33,11 +33,13 @@ jobs:
       - name: Install llvm clang
         run: |
              brew install llvm
+             which clang
              export PATH="/usr/local/opt/llvm/bin:$PATH"
-      - name: make address
-        run: make -C ./unit_tests address && ./unit_tests/unit_test
+             which clang
       - name: make leak
         run: make -C ./unit_tests leak && ./unit_tests/unit_test
+      - name: make address
+        run: make -C ./unit_tests address && ./unit_tests/unit_test
       - name: Checkout libft-unit-test
         uses: actions/checkout@v2
         with:
