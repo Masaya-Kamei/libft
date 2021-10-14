@@ -46,6 +46,7 @@ jobs:
       - name: run libft-unit-test
         run: |
              sed -i "" "/^LIBFTDIR/s/libft/..\/libft/" Makefile
+             sed -i "" "/^CC/s/clang/gcc/" Makefile
              make re
              ./run_test
              ! cat result.log | grep -e "KO" -e "FAILED" -e "CRASH" -e "TIMEOUT" -e "MISSING"
