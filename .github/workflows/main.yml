@@ -34,10 +34,10 @@ jobs:
         run: |
              brew install llvm
              echo "/usr/local/opt/llvm/bin" >> $GITHUB_PATH
-      - name: make leak
-        run: make -C ./unit_tests leak && ./unit_tests/unit_test
       - name: make address
         run: make -C ./unit_tests address && ./unit_tests/unit_test
+      - name: make leak
+        run: make -C ./unit_tests leak && ./unit_tests/unit_test
       - name: Checkout libft-unit-test
         uses: actions/checkout@v2
         with:
@@ -46,5 +46,5 @@ jobs:
       - name: run libft-unit-test
         run: |
              sed -i "" "/^LIBFTDIR/s/libft/..\/libft/" libft-unit-test/Makefile
-             make -C ./libft-unit-test
+             make -C ./libft-unit-test re
              ! ./libft-unit-test/run_test | grep -e "KO" -e "FAILED" -e "CRASH" -e "TIMEOUT" -e "MISSING"
