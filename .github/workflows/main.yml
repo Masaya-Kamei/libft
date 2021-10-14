@@ -33,8 +33,8 @@ jobs:
       - name: Install llvm clang
         run: |
              brew install llvm
-             which clang
-             export PATH="/usr/local/opt/llvm/bin:$PATH"
+             echo 'export PATH="/usr/local/opt/llvm/bin:$PATH"' >> ~/.zshrc
+             source ~/.zshrc
              which clang
       - name: make leak
         run: make -C ./unit_tests leak && ./unit_tests/unit_test
