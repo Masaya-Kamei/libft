@@ -6,7 +6,7 @@
 #    By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 18:28:14 by mkamei            #+#    #+#              #
-#    Updated: 2021/10/13 18:37:17 by mkamei           ###   ########.fr        #
+#    Updated: 2021/10/14 15:44:44 by mkamei           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,20 +30,15 @@ LIBFTTARGET		:=	all
 LIBFT			:=	$(LIBFTDIR)/libft.a
 
 LIBUNITDIR		:=	./framework
-LIBUNITTARGET	:= all
-LIBUNIT			:= $(LIBUNITDIR)/libunit.a
 
-LIBINCLUDE	:=	-I../ -I./framework/includes
+LIBINCLUDE	:=	-I../ -I./framework
 LIBDIR		:=	-L${LIBFTDIR} -L${LIBUNITDIR}
 LIBLINK		:=	-lft -lunit
-ifeq ($(shell uname),Linux)
-	LIBLINK	+=	-lbsd
-endif
 LIB			:=	$(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
 
 all		:	$(NAME)
 
-$(NAME)	:	$(LIBFT) $(LIBUNIT) $(OBJS)
+$(NAME)	:	$(LIBFT) $(OBJS)
 			$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIB) -o $@
 
 $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c
@@ -53,21 +48,16 @@ $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c
 $(LIBFT):
 			make $(LIBFTTARGET) -C $(LIBFTDIR)
 
-$(LIBUNIT):
-			make $(LIBUNITTARGET) -C $(LIBUNITDIR)
-
 test	:	$(NAME)
 			@./$(NAME) || :
 
 clean	:
 			$(RM) $(OBJS)
 			make clean -C $(LIBFTDIR)
-			make clean -C $(LIBUNITDIR)
 
 fclean	: 	clean
 			$(RM) $(NAME)
 			make fclean -C $(LIBFTDIR)
-			make fclean -C $(LIBUNITDIR)
 
 re		:	fclean all
 
