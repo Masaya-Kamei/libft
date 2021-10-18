@@ -1,1 +1,3 @@
-# 42libft
+# 42 libft
+
+Useful functions
