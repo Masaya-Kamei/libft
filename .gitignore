@@ -4,3 +4,4 @@ libft.a
 a.out
 unit_test
 objs
+libunit.a

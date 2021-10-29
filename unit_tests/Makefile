@@ -6,7 +6,7 @@
 #    By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 18:28:14 by mkamei            #+#    #+#              #
-#    Updated: 2021/10/14 15:44:44 by mkamei           ###   ########.fr        #
+#    Updated: 2021/10/29 12:59:21 by mkamei           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,16 +29,18 @@ LIBFTDIR		:=	../
 LIBFTTARGET		:=	all
 LIBFT			:=	$(LIBFTDIR)/libft.a
 
-LIBUNITDIR		:=	./framework
+LIBUNITDIR		:=	./libunit
+LIBUNITTARGET	:=	all
+LIBUNIT			:=	$(LIBUNITDIR)/libunit.a
 
-LIBINCLUDE	:=	-I../ -I./framework
-LIBDIR		:=	-L${LIBFTDIR} -L${LIBUNITDIR}
-LIBLINK		:=	-lft -lunit
-LIB			:=	$(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
+LIBINCLUDE		:=	-I../ -I./libunit/includes
+LIBDIR			:=	-L${LIBFTDIR} -L${LIBUNITDIR}
+LIBLINK			:=	-lft -lunit
+LIB				:=	$(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
 
 all		:	$(NAME)
 
-$(NAME)	:	$(LIBFT) $(OBJS)
+$(NAME)	:	$(LIBFT) $(LIBUNIT) $(OBJS)
 			$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIB) -o $@
 
 $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c
@@ -48,27 +50,37 @@ $(OBJSDIR)/%.o	:	$(SRCSDIR)/%.c
 $(LIBFT):
 			make $(LIBFTTARGET) -C $(LIBFTDIR)
 
+$(LIBUNIT):
+			make $(LIBUNITTARGET) -C $(LIBUNITDIR)
+
 test	:	$(NAME)
 			@./$(NAME) || :
 
 clean	:
 			$(RM) $(OBJS)
 			make clean -C $(LIBFTDIR)
+			make clean -C $(LIBUNITDIR)
 
 fclean	: 	clean
 			$(RM) $(NAME)
 			make fclean -C $(LIBFTDIR)
+			make fclean -C $(LIBUNITDIR)
 
 re		:	fclean all
 
-address	:	LIBFTTARGET	=	address
-address	:	CC			=	clang
-address	:	CFLAGS 		+= 	-g -fsanitize=address
+# Use llvm clang
+# For Macos, https://stackoverflow.com/questions/53456304/mac-os-leaks-sanitizer
+
+address	:	LIBFTTARGET		=	address
+address	:	LIBUNITTARGET	=	address
+address	:	CC				=	clang
+address	:	CFLAGS 			+= 	-g -fsanitize=address
 address	:	re
 
-leak	:	LIBFTTARGET	=	leak
-leak	:	CC			=	clang
-leak	:	CFLAGS 		+= 	-g -fsanitize=leak
+leak	:	LIBFTTARGET		=	leak
+leak	:	LIBUNITTARGET	=	leak
+leak	:	CC				=	clang
+leak	:	CFLAGS 			+= 	-g -fsanitize=leak
 leak	:	re
 
 .PHONY	:	all clean fclean re address leak

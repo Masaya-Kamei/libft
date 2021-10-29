@@ -35,9 +35,15 @@ jobs:
              brew install llvm
              echo "/usr/local/opt/llvm/bin" >> $GITHUB_PATH
       - name: make address
-        run: make -C ./unit_tests address && ./unit_tests/unit_test
+        run: |
+              make address
+              ./unit_test
+        working-directory: ./unit_tests
       - name: make leak
-        run: make -C ./unit_tests leak && ./unit_tests/unit_test
+        run: |
+              make leak
+              ./unit_test
+        working-directory: ./unit_tests
       - name: Checkout libft-unit-test
         uses: actions/checkout@v2
         with:
