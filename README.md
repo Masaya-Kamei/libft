@@ -4,7 +4,7 @@ Useful functions
 
 ## Usage example
 
-1. `git clone https://github.com/Masaya-Kamei/libft.git`
+1. `git clone https://github.com/Masaya-Kamei/libft.git --recursive`
 2. `cd libft/sample`
 3. `./run_sample.sh`
 
