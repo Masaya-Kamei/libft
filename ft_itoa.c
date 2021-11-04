@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 15:30:11 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/04 12:41:15 by mkamei           ###   ########.fr       */
+/*   Updated: 2021/11/04 09:38:36 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static int	get_digit_num(int n)
 {
 	int		digit_num;
 
+	if (n == 0)
+		return (1);
 	digit_num = 0;
 	while (n != 0 && ++digit_num)
 		n /= 10;
