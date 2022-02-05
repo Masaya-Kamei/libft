@@ -33,9 +33,7 @@ jobs:
       - name: Run Norminette
         run: norminette *.c *.h
       - name: Install llvm clang
-        run: |
-             brew install llvm
-             echo "/usr/local/opt/llvm/bin" >> $GITHUB_PATH
+        run: brew install llvm
       - name: make address
         run: |
               make address

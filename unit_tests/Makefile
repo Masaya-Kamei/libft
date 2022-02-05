@@ -6,7 +6,7 @@
 #    By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 18:28:14 by mkamei            #+#    #+#              #
-#    Updated: 2021/10/29 12:59:21 by mkamei           ###   ########.fr        #
+#    Updated: 2022/02/05 08:22:02 by mkamei           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,9 +68,6 @@ fclean	: 	clean
 
 re		:	fclean all
 
-# Use llvm clang
-# For Macos, https://stackoverflow.com/questions/53456304/mac-os-leaks-sanitizer
-
 address	:	LIBFTTARGET		=	address
 address	:	LIBUNITTARGET	=	address
 address	:	CC				=	clang
@@ -79,7 +76,7 @@ address	:	re
 
 leak	:	LIBFTTARGET		=	leak
 leak	:	LIBUNITTARGET	=	leak
-leak	:	CC				=	clang
+leak	:	CC				=	/usr/local/opt/llvm/bin/clang
 leak	:	CFLAGS 			+= 	-g -fsanitize=leak
 leak	:	re
 
