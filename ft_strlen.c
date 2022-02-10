@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 12:49:58 by mkamei            #+#    #+#             */
-/*   Updated: 2021/05/27 18:38:42 by mkamei           ###   ########.fr       */
+/*   Updated: 2022/02/10 10:01:51 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len] != '\0')
+	while (s[len])
 		len++;
 	return (len);
 }

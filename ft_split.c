@@ -6,7 +6,7 @@
 /*   By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 18:14:01 by mkamei            #+#    #+#             */
-/*   Updated: 2021/10/04 18:06:42 by mkamei           ###   ########.fr       */
+/*   Updated: 2022/02/10 10:00:56 by mkamei           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int	get_splited_str_count(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (s[i] != c)
 		{
 			count++;
-			while (s[i] != c && s[i] != '\0')
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -56,12 +56,12 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = -1;
 	strs_index = -1;
-	while (s[++i] != '\0')
+	while (s[++i])
 	{
 		if (s[i] != c)
 		{
 			len = 0;
-			while (s[i + len] != c && s[i + len] != '\0')
+			while (s[i + len] && s[i + len] != c)
 				len++;
 			strs[++strs_index] = ft_substr(s, i, len);
 			if (strs[strs_index] == NULL)
