@@ -6,8 +6,11 @@ Useful functions
 
 ```zsh
 git clone https://github.com/Masaya-Kamei/libft.git --recursive;
-cd libft/sample;
-./run_sample.sh;
+cd libft;
+make;
+gcc main/main.c -I. -L. -lft;
+echo -e "\n---Output---";
+./a.out;
 ```
 
 ## Tool
