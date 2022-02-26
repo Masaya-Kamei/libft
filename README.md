@@ -2,7 +2,7 @@
 
 Useful functions
 
-## Usage example
+## Sample script
 
 ```zsh
 git clone https://github.com/Masaya-Kamei/libft.git --recursive;
