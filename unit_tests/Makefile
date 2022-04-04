@@ -6,7 +6,7 @@
 #    By: mkamei <mkamei@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 18:28:14 by mkamei            #+#    #+#              #
-#    Updated: 2022/02/05 08:22:02 by mkamei           ###   ########.fr        #
+#    Updated: 2022/04/04 17:25:27 by mkamei           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ LIBUNITDIR		:=	./libunit
 LIBUNITTARGET	:=	all
 LIBUNIT			:=	$(LIBUNITDIR)/libunit.a
 
-LIBINCLUDE		:=	-I../ -I./libunit/includes
+LIBINCLUDE		:=	-I../includes -I./libunit/includes
 LIBDIR			:=	-L${LIBFTDIR} -L${LIBUNITDIR}
 LIBLINK			:=	-lft -lunit
 LIB				:=	$(LIBINCLUDE) $(LIBDIR) $(LIBLINK)
