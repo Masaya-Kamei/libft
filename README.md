@@ -8,7 +8,7 @@ Useful functions
 git clone https://github.com/Masaya-Kamei/libft.git --recursive;
 cd libft;
 make;
-gcc main/main.c -I. -L. -lft;
+gcc main/main.c -I./includes -L. -lft;
 echo -e "\n---Output---";
 ./a.out;
 ```

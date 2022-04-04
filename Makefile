@@ -1,3 +1,5 @@
+vpath	%.c srcs
+
 SRCSDIR	=	.
 SRCSNAME=	ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c \
 			ft_strnstr.c ft_strncmp.c ft_memset.c ft_bzero.c ft_memcpy.c \
@@ -16,7 +18,7 @@ OBJSDIR	=	./objs
 OBJSNAME=	$(SRCSNAME:.c=.o)
 OBJS	=	$(addprefix $(OBJSDIR)/, $(OBJSNAME))
 
-INCLUDE	=	-I./
+INCLUDE	=	-I./includes
 NAME	=	libft.a
 
 CC		=	gcc
