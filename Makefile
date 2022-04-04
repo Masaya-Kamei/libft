@@ -40,6 +40,9 @@ fclean	:	clean
 
 re		:	fclean all
 
+debug	:	CFLAGS +=	-g
+debug	:	re
+
 address	:	CFLAGS += 	-g -fsanitize=address
 address	:	re
 
@@ -47,4 +50,4 @@ leak	:	CC		=	/usr/local/opt/llvm/bin/clang
 leak	:	CFLAGS += 	-g -fsanitize=leak
 leak	:	re
 
-.PHONY	:	all clean fclean re address leak
+.PHONY	:	all clean fclean re debug address leak
